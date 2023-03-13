@@ -10,20 +10,37 @@ public class Interactable : MonoBehaviour
 
     [SerializeField]
     private bool m_IsOnce = false;
-    
+
+    [SerializeField]
     private bool canBeUsed = true;
 
     public string InteractionText;
 
+    public int liste = 0;
+
     public void Interact()
     {
+        if (liste == 3 && !canBeUsed)
+        {
+            SetUsable(true);
+        }
+
         if (!canBeUsed)
+        {
+            
             return;
+        }
 
-        if (m_IsOnce)
+        if (m_IsOnce && liste < 3)
+        {
+            liste += 3;
+            Debug.Log(liste);
             canBeUsed = false;
+            m_IsOnce = false;
+        }
 
-        m_OnInteract.Invoke();
+        
+        
     }
 
     public bool GetUsable()
@@ -34,6 +51,7 @@ public class Interactable : MonoBehaviour
     public void SetUsable(bool truth)
     {
         canBeUsed = truth;
+        
     }
 
     public void SetText(string text)
@@ -43,6 +61,7 @@ public class Interactable : MonoBehaviour
 
     public UnityEvent GetInteractEvent()
     {
+        
         return m_OnInteract;
     }
 }
