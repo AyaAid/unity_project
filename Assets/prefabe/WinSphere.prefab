@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &4363083196285047558
 Transform:
@@ -127,5 +127,5 @@ MonoBehaviour:
         m_CallState: 2
   m_IsOnce: 1
   canBeUsed: 1
+  locked: 0
   InteractionText: TO WIN!
-  liste: 0
