@@ -1344,3 +1344,21 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 693.114661 seconds.
+  path: Assets/Graphics/Materials/WinSphere.mat
+  artifactKey: Guid(a2ec721e84ddf58478a6d61e3fb72bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Materials/WinSphere.mat using Guid(a2ec721e84ddf58478a6d61e3fb72bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c47adafa8660d039e5c48efe5715bd28') in 0.336925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 259.391569 seconds.
+  path: Assets/Graphics/Materials/Black.mat
+  artifactKey: Guid(c793e4e4373884098b1fffbde670b554) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Materials/Black.mat using Guid(c793e4e4373884098b1fffbde670b554) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7778426b4a5f010db95128f00217649') in 0.035930 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.965119 seconds.
+  path: Packages/com.unity.probuilder/Content/Resources/Materials/ProBuilderDefault.mat
+  artifactKey: Guid(c22777d6e868e4f2fb421913386b154e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.probuilder/Content/Resources/Materials/ProBuilderDefault.mat using Guid(c22777d6e868e4f2fb421913386b154e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5d98ec039ec3a24722461ecf7c781ca') in 0.328304 seconds 
