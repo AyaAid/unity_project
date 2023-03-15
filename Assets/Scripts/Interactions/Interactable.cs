@@ -12,22 +12,18 @@ public class Interactable : MonoBehaviour
     private bool m_IsOnce = false;
 
     [SerializeField]
-    private bool canBeUsed;
+    private bool canBeUsed = true;
 
     [SerializeField]
     private bool locked;
 
-    private static int s_Liste = 0;
+    private int s_Liste = 0;
 
     public string InteractionText;
 
     public void Interact()
     {
-        if (!locked && canBeUsed && s_Liste == 3)
-        {
-            m_OnInteract.Invoke();
-            s_Liste = -1;
-        }
+        
         if (locked && !canBeUsed)
         {
             return;
@@ -36,11 +32,7 @@ public class Interactable : MonoBehaviour
         {
             if (m_IsOnce)
                 canBeUsed = false;
-
-            s_Liste += 1;
-            Debug.Log(s_Liste);
-            if (s_Liste > 3)
-                s_Liste = -1;
+            m_OnInteract.Invoke();
         }
 
         if (locked && s_Liste == 3)
@@ -66,12 +58,15 @@ public class Interactable : MonoBehaviour
     {
         return m_OnInteract;
     }
-    public void Update()
+    
+    public void incrementation_liste()
     {
+        s_Liste += 1;
         if (locked && !canBeUsed && s_Liste == 3)
         {
             canBeUsed = true;
             locked = false;
         }
+        
     }
 }
