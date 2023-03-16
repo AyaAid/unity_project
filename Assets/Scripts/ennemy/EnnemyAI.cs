@@ -19,30 +19,22 @@ public class EnnemyAI : MonoBehaviour
     public Transform target;
 
     void Start()
-    {
+    {// Find the player character
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     void Update()
     {
-        // Find the player character
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            target = player.transform;
 
-            // Set the destination for the enemy's navmesh agent to the player's position
-            agent.destination = player.transform.position;
+        if (target != null)
+        {
+            agent.destination = target.position;
+        }
+        if (Vector3.Distance(target.position, transform.position) < TaDistanceQueTuConsidèreAssezPetite)
+        {
+            m_OnTouch.Invoke();
         }
     }
-    private void FixedUpdate()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        GameObject enemy = GameObject.FindGameObjectWithTag("Ghoul");
-        
-
-        if (Vector3.Distance(player.transform.position, enemy.transform.position) < TaDistanceQueTuConsidèreAssezPetite)
-            //Debug.Log("touché");
-            m_OnTouch.Invoke();
-     }
+    
 }
